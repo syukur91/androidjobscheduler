@@ -3,5 +3,9 @@
     <string name="log_message">Look in the CatLog to see Job Scheduler Messages.</string>
     <string name="schedule_job">Schedule Job</string>
     <string name="job_scheduled_successfully">Job scheduled successfully!</string>
+    <string name="job_started">Job Started!</string>
+    <string name="job_stopped">Job Stopped!</string>
+
+
 
 </resources>

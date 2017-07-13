@@ -7,6 +7,7 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 public class MyJobService extends JobService {
     static final String TAG = MyJobService.class.getSimpleName();
@@ -18,7 +19,7 @@ public class MyJobService extends JobService {
         // Note: this is preformed on the main thread.
         Log.d(TAG, "onStartJob id=" + params.getJobId());
         updateTask.execute(params);
-
+        Toast.makeText(this, R.string.job_started, Toast.LENGTH_LONG).show();
         return true;
     }
 
@@ -27,10 +28,8 @@ public class MyJobService extends JobService {
     @Override
     public boolean onStopJob(JobParameters params) {
         // Note: return true to reschedule this job.
-
         Log.d(TAG, "onStopJob id=" + params.getJobId());
         boolean shouldReschedule = updateTask.stopJob(params);
-
         return shouldReschedule;
     }
 
@@ -47,6 +46,7 @@ public class MyJobService extends JobService {
 
         @Override
         protected void onPostExecute(JobParameters[] result) {
+
             for (JobParameters params : result) {
                 if (!hasJobBeenStopped(params)) {
                     Log.d(TAG, "finishing job with id=" + params.getJobId());

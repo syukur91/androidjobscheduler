@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                 .setRequiresDeviceIdle(true)
                 .setRequiresCharging(true)
-                .setPeriodic(400)
+                .setPeriodic(1000)
 //                .setOverrideDeadline(400) // Remove comment for faster testing.
                 .build();
 
