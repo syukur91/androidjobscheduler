@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Scheduler</string>
+    <string name="log_message">Look in the CatLog to see Job Scheduler Messages.</string>
+    <string name="schedule_job">Schedule Job</string>
+    <string name="job_scheduled_successfully">Job scheduled successfully!</string>
+
+</resources>
